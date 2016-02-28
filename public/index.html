@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Webrtc Sample</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <style type="text/css">
+    	body {margin: 20px;}
+    	video {border: 2px solid #ccc;}
+    </style>
+</head>
+
+<body>
+	<div class="contiainer-fluid">
+    	<div class="form">
+            <div class="form-group">
+            	<h2 class="pull-right">
+            		<span class="label label-primary pull-right" id="call-state"></span>
+            	</h2>
+                <label for="id">
+                    <h3>1. Register
+                    	<input type="text" name="id" id="id" />
+                    </h3>
+                </label>
+                <input type="button" class="btn btn-primary" value="register" id="register" onclick="rtc.register(getVal('id'))">
+            </div>
+            <div class="form-group">
+                <label for="id">
+                    <h3>2. Call to:
+                    	<input type="text" name="callee" id="callee" />
+                    </h3>
+                </label>
+                <input type="button" class="btn btn-success" value="call" id="call" onclick="rtc.call(getVal('callee'), getVal('id'))">
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+   <div class="container-fluid">
+        <div class="row">
+        	<div class="col-md-6">
+        		<h2>Local</h2>
+                <video id="videoInput" autoplay width="340px" height="240px"></video>
+            </div>
+        	<div class="col-md-6">
+        		<h2>Remote</h2>
+                <video id="videoOutput" autoplay width="340px" height="240px"></video>
+        	</div>
+        </div>
+    </div>	
+
+    <hr>
+
+    <div class="container-fluid">
+        <div class="row">
+        	<div class="col-md-4">
+	        	<input type="button" class="btn btn-warning" value="STOP" onclick="rtc.stop()">
+        	</div>	
+        </div>
+    </div>
+
+    <script type="text/javascript" src="http://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+    	function getVal(id) {
+    		return document.getElementById(id).value;
+    	}
+    </script>
+</body>
+
+</html>

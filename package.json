@@ -1,0 +1,15 @@
+{
+  "name": "webrtc-sample",
+  "version": "1.0.0",
+  "description": "Sample WebRTC application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yaraslau Kurmyza <lotask@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "ws": "^1.0.1"
+  }
+}
